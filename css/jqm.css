@@ -1,0 +1,9 @@
+/** Form **/
+.gdo-container button.gdo-jqm-icon { float: left; margin: 0; top: -4px; margin-right: 4px; }
+.gdo-container { padding-top: 12px; }
+.gdt-divider { border-bottom: 1px dashed #333; }
+.gdo-form-title { margin: 8px 0; }
+.gdo-autocomplete-listview li:hover { cursor: pointer; }
+.ui-content .gdo-autocomplete-listview.ui-listview-inset { margin: 0; }
+.gdo-required label:after { content: "*"; }
+.ui-mini { line-height: 1.6; }

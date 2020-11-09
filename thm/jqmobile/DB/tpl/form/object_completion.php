@@ -1,5 +1,6 @@
 <?php
 /** @var $field \GDO\DB\GDT_Object **/
+$object = $field->getValue();
 ?>
 <div class="ui-field-contain gdo-container<?=$field->classError()?>">
   <label <?=$field->htmlForID()?>><?=$field->htmlIcon()?><?=$field->displayLabel()?></label>
@@ -13,7 +14,7 @@
    data-clear="true"
    <?=$field->htmlRequired()?>
    <?=$field->htmlDisabled()?>
-   value="<?=$field->getValue()->displayName()?>" />
+   value="<?=$object ? $object->displayName() : null?>" />
   <input
    type="hidden"
    <?=$field->htmlFormName()?>

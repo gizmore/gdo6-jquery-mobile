@@ -38,8 +38,8 @@ use GDO\UI\GDT_IconButton;
    </div>
   </div>
   <div role="main" class="ui-content">
-    <?=Website::renderTopResponse()?>
     <?=$page->topTabs->renderCell()?>
+    <?=Website::renderTopResponse()?>
     <?=$page->html?>
   </div>
   <div data-role="toolbar" data-type="footer" data-position="fixed" data-tap-toggle="true">

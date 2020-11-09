@@ -12,15 +12,15 @@ Clone the module as usual in the GDO folder.
 Build JQueryMobile with grunt.
 
      cd gdo6/
-     ./gdo6_yarn.sh
-     cd GDO/JQueryMobile
+     ./gdo6_yarn.sh # install jquery components via yarn
+     cd GDO/JQueryMobile/bower_components/jquery-mobile
      npm install grunt
-     grunt
+     grunt # build jquery-mobile from src
      
 ### Features
 
 - Autocompletion
-- FA Icon Pack
+- JQueryMobile Icon Pack
 
 #### Enjoy!
 gizmore

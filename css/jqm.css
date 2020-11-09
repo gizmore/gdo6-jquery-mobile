@@ -1,9 +1,44 @@
 /** Form **/
-.gdo-container button.gdo-jqm-icon { float: left; margin: 0; top: -4px; margin-right: 4px; }
+form .gdo-container button.gdo-icon { float: left; margin: 0; top: -5px; margin-right: 4px; }
 .gdo-container { padding-top: 12px; }
-.gdt-divider { border-bottom: 1px dashed #333; }
+.gdt-divider { border-bottom: 1px dashed #333; margin-top: 6px; }
 .gdo-form-title { margin: 8px 0; }
 .gdo-autocomplete-listview li:hover { cursor: pointer; }
 .ui-content .gdo-autocomplete-listview.ui-listview-inset { margin: 0; }
 .gdo-required label:after { content: "*"; }
 .ui-mini { line-height: 1.6; }
+.gdo-container.gdt-anticsrf { padding: 0; }
+.gdt-captcha div.ui-textinput { width: 200px; }
+img.gdo-captcha-img { position: relative; top: 0px; margin-left: 12px; }
+textarea.wysiwyg { max-width: 70%; }
+a.ui-selectmenu-button { width: 100%; }
+
+/** File **/
+.gdo-file-preview img { max-width: 320px; max-height: 240px; }
+
+/** Icon **/
+.ui-controlgroup .ui-button-icon-only { padding: 0; }
+.gdo-icon.ui-button { display: inline-block; border: 2px solid #eee; background: transparent; border-radius: 8em; margin: 0; margin-right: 6px; }
+
+/** Panel **/
+.gdo-error, .gdo-exception { background: mistyrose; font-weight: bold; }
+.gdo-success { background: lime; font-weight: bold; }
+pre.gdo-exception { white-space: pre-wrap; }
+.debug-exception-title { line-height: 30px; }
+
+/** Button **/
+.ui-button { line-height: 1.7; }
+
+/** Menu **/
+.gdt-menu a.gdt-button { padding: 8px; }
+.gdt-menu a.gdt-button .ui-listview-item-icon { position: relative; top: 4px; }
+
+/** Table **/
+.gdo-table a.gdt-button { margin: 0; padding: 0; }
+
+/** Header **/
+.ui-toolbar-header a { align-self: center; }
+
+/** List **/
+.gdt-list ul.ui-listview { margin: 0 -1em; }
+.gdt-list div.list-title { margin-bottom: 8px; }

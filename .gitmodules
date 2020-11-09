@@ -1,0 +1,3 @@
+[submodule "jQuery-Mobile-Icon-Pack"]
+	path = jQuery-Mobile-Icon-Pack
+	url = ssh://git@github.com/gizmore/jQuery-Mobile-Icon-Pack

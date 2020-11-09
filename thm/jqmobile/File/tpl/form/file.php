@@ -1,7 +1,5 @@
 <?php /** @var $field \GDO\File\GDT_File **/ ?>
-<div class="ui-field-contain gdo-container<?=$field->classError()?>">
-  <label <?=$field->htmlForID()?>><?=$field->htmlIcon()?><?=$field->displayLabel()?></label>
-<div id="gdo-file-preview-<?=$field->name?>"></div>
+<div id="gdo-file-preview-<?=$field->name?>">
 <?php foreach ($field->getInitialFiles() as $file) : $file instanceof \GDO\File\GDO_File; ?>
 <?php $deleteButton = $field->noDelete ? '' : sprintf('<input type="submit" name="delete_%s[%s]" value="Remove File" onclick="return confirm(\'%s\')"/>', $field->name, $file->getID(), t('confirm_delete')); ?>
 <?php if ($field->preview && $file->isImageType()) : ?>
@@ -12,9 +10,8 @@
 <?php endforeach; ?>
   <div style="clear: both;"></div>
 </div>
-<div class="gdo-container<?= $field->classError(); ?>">
-  <?=$field->htmlIcon()?>
-  <label <?=$field->htmlForID()?>><?=$field->displayLabel()?></label>
+<div class="ui-field-contain gdo-container<?=$field->classError()?>">
+  <label <?=$field->htmlForID()?>><?=$field->htmlIcon()?><?=$field->displayLabel()?></label>
   <input
 <?php if ($field->isImageFile()) : ?>
    capture="capture"

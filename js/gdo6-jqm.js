@@ -6,21 +6,8 @@
  */
 $(function() {
 	
-	/**
-	 * Catch gdo6 405 errors and turn them in success :P
-	 */
-	$(document).ajaxError(function(event, request, settings) {
-		if (request.status === 405) {
-			console.log(event);
-			console.log(request);
-			console.log(settings);
-			request.status = 200;
-			settings.hasContent = true;
-			return settings.success(request.responseText, request.statusText, settings);
-		}
-	});
-	
-	
+	$.mobile.ajaxEnabled = false; 
+
 	$('input.gdo-autocomplete').each(function(){
 		var $this = $(this);
 		var config = JSON.parse($this.attr('data-config'));
@@ -51,6 +38,8 @@ $(function() {
             		$ul.html(html);
             		$ul.listview("refresh");
             		$ul.trigger("updatelayout");
+            		$ul.removeClass('ui-screen-hidden');
+            		$ul.show();
             	});
             }
             else {

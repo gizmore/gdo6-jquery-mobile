@@ -3,8 +3,6 @@ form .gdo-container button.gdo-icon { float: left; margin: 0; top: -5px; margin-
 .gdo-container { padding-top: 12px; }
 .gdt-divider { border-bottom: 1px dashed #333; margin-top: 6px; }
 .gdo-form-title { margin: 8px 0; }
-.gdo-autocomplete-listview li:hover { cursor: pointer; }
-.ui-content .gdo-autocomplete-listview.ui-listview-inset { margin: 0; }
 .gdo-required label:after { content: "*"; }
 .ui-mini { line-height: 1.6; }
 .gdo-container.gdt-anticsrf { padding: 0; }
@@ -12,19 +10,29 @@ form .gdo-container button.gdo-icon { float: left; margin: 0; top: -5px; margin-
 img.gdo-captcha-img { position: relative; top: 0px; margin-left: 12px; }
 textarea.wysiwyg { max-width: 70%; }
 a.ui-selectmenu-button { width: 100%; }
+.gdo-container.gdo-has-error { padding-bottom: 8px; background-color: mistyrose; border: 1px dashed #333; }
+div.gdo-form-error { font-weight: bold; clear: both; padding: 4px; }
+
+/** Autocomplete **/
+.gdo-autocomplete-listview li:hover { cursor: pointer; }
+div.ui-field-contain.gdo-autocomplete div.ui-controlgroup { margin-left: 22%; }
+.ui-content .gdo-autocomplete-listview.ui-listview-inset { margin: 0; }
+div.easy-autocomplete > input { padding-left: 1.75em; border: none; }
 
 /** File **/
-.gdo-file-preview img { max-width: 320px; max-height: 240px; }
+.gdo-file-preview img { max-width: 100%; max-height: 240px; }
 
 /** Icon **/
 .ui-controlgroup .ui-button-icon-only { padding: 0; }
-.gdo-icon.ui-button { display: inline-block; border: 2px solid #eee; background: transparent; border-radius: 8em; margin: 0; margin-right: 6px; }
+.gdo-icon { display: inline-block; border: 2px solid #ddd; border-radius: 8em; margin: 0; margin-right: 6px; padding: 2px; box-sizing: content-box; }
 
 /** Panel **/
 .gdo-error, .gdo-exception { background: mistyrose; font-weight: bold; }
 .gdo-success { background: lime; font-weight: bold; }
+.gdo-error p, .gdo-success p { margin-bottom: 0; }
 pre.gdo-exception { white-space: pre-wrap; }
-.debug-exception-title { line-height: 30px; }
+.debug-exception-title { line-height: 20px; }
+.gdo-error .gdo-error-message { position: relative; top: 5px; }
 
 /** Button **/
 .ui-button { line-height: 1.7; }
@@ -33,12 +41,31 @@ pre.gdo-exception { white-space: pre-wrap; }
 .gdt-menu a.gdt-button { padding: 8px; }
 .gdt-menu a.gdt-button .ui-listview-item-icon { position: relative; top: 4px; }
 
+/** Selectmenu **/
+.ui-selectmenu .ui-mini span.ui-selectmenu-button-text { line-height: 20px; vertical-align: middle; }
+
 /** Table **/
 .gdo-table a.gdt-button { margin: 0; padding: 0; }
 
 /** Header **/
-.ui-toolbar-header a { align-self: center; }
+.ui-toolbar-header a { align-self: center; text-overflow: inherit; }
+
+/** Footer **/
+.gdo-perf-bar { padding: 0 8px; }
+
+/** Sidebar **/
+.gdo-sidebar h3.gdt-divider { font-size: 16px; }
 
 /** List **/
 .gdt-list ul.ui-listview { margin: 0 -1em; }
+/* .gdt-list ul.ui-listview li:hover { cursor: pointer; } */
+.gdt-list .gdo-container { padding: 0; }
 .gdt-list div.list-title { margin-bottom: 8px; }
+ul.ui-listview li.gdt-list-item { display: flex; flex-direction: row; }
+.gdt-list-item > span { display: flex; flex: 1 1 auto; flex-direction: column; }
+.gdt-list-item span.gdt-li-actions { flex: 0 0 auto; align-self: center; }
+ul.ui-listview .gdt-list-item > h3 { display: flex; }
+ul.ui-listview .gdt-list-item .gdt-li-avatar { margin-right: 8px; }
+.gdt-li-upper { display: flex; flex-direction: row; }
+.gdt-li-title-texts { display: flex; flex-direction: column; width: 100%; }
+.gdt-li-actions a { opacity: 0; }

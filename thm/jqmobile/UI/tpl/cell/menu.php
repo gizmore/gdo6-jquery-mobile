@@ -1,8 +1,12 @@
 <?php /** @var $field \GDO\UI\GDT_Menu **/ ?>
-<a href="#<?=$field->id()?>" data-rel="popup"><?=t('menu')?></a>
+<a href="#<?=$field->id()?>" data-rel="popup"><?=$field->displayLabel()?></a>
 <div data-role="popup" id="<?=$field->id()?>" class="gdt-menu">
 <ul data-role="listview">
-<li data-role="divider"><?=t('menu')?></li>
+<?php if ($field->label || $field->labelRaw) : ?>
+<li data-role="divider"><?=$field->displayLabel()?></li>
+<?php else : ?>
+<li data-role="divider">aaa<?=t('menu')?></li>
+<?php endif; ?>
 <?php foreach ($field->getFields() as $gdoType) : ?>
 <li><?=$gdoType->renderCell()?></li>
 <?php endforeach; ?>

@@ -7,7 +7,7 @@ use GDO\UI\GDT_Icon;
   <h3><?=GDT_Icon::iconS('error')?><?=$field->title?></h3>
   <p><?=$field->html?></p>
 <?php else : ?>
-  <p><div class="fl"><?=GDT_Icon::iconS('error')?></div><?=$field->html?></p>
+  <div class="fl"><?=GDT_Icon::iconS('error')?></div><p class="gdo-error-message"><?=$field->html?></p>
   <div class="cb"></div>
 <?php endif; ?>
 </div>

@@ -17,52 +17,64 @@ use GDO\DB\GDT_Enum;
  */
 final class Module_JQueryMobile extends GDO_Module
 {
-    public $module_priority = 10;
+    public $module_priority = 25;
     
     public function getThemes() { return ['jqmobile']; }
     
     public function getDependencies() { return ['JQuery']; }
+
+    /**
+     * Block JQueryAutocomplete if we use ours.
+     */
+    public function getBlockedModules()
+    {
+        if ($this->cfgUseTheme() && $this->cfgUseAutocomplete() && Application::instance()->hasTheme('jqmobile'))
+        {
+            return ['JQueryAutocomplete'];
+        }
+    }
     
     public function onLoadLanguage() { return $this->loadLanguage('lang/jqm'); }
     
     public function getConfig()
     {
         return array(
-            GDT_Checkbox::make('use_icons')->initial('1'),
+            GDT_Enum::make('use_icons')->enumValues('jqm_icons_always', 'jqm_icons_on_theme', 'jqm_icons_never')->initial('jqm_icons_on_theme'),
             GDT_Checkbox::make('use_theme')->initial('1'),
-            GDT_Enum::make('jqm_theme')->enumValues('a', 'b', 'c', 'd')->initial('a'),
+            GDT_Checkbox::make('use_autocomplete')->initial('1'),
+            GDT_Enum::make('jqm_theme')->enumValues('a', 'b')->initial('a'),
         );
     }
-    public function cfgUseIcons() { return $this->getConfigValue('use_icons'); }
+    public function cfgUseIcons() { return $this->getConfigVar('use_icons'); }
     public function cfgUseTheme() { return $this->getConfigValue('use_theme'); }
+    public function cfgUseAutocomplete() { return $this->getConfigValue('use_autocomplete'); }
     public function cfgJQMTheme() { return $this->getConfigVar('jqm_theme'); }
     
     public function onIncludeScripts()
     {
         $min = Module_Core::instance()->cfgMinifyJS() === 'no' ? '' : '.min';
-        if ($this->cfgUseTheme())
+        if ($this->cfgUseTheme() && Application::instance()->hasTheme('jqmobile'))
         {
-            if (Application::instance()->hasTheme('jqmobile'))
+            $this->jqmIncluded = true;
+            $this->addBowerJavascript("jquery-mobile/dist/jquery.mobile{$min}.js");
+            $this->addBowerCSS("jquery-mobile/dist/jquery.mobile{$min}.css");
+            $this->addJavascript('js/gdo6-jqm.js');
+            $this->addCSS('css/jqm.css');
+            if ($this->cfgUseAutocomplete())
             {
-                $this->addBowerJavascript("jquery-mobile/dist/jquery.mobile{$min}.js");
-                $this->addBowerCSS("jquery-mobile/dist/jquery.mobile{$min}.css");
-                $this->addCSS('css/jqm.css');
-                $this->addJavascript('js/gdo6-jqm.js');
+                $this->addJavascript('js/gdo6-jqm-autocomplete.js');
+            }
+            if ($this->cfgUseIcons() === 'jqm_icons_on_theme')
+            {
+                $this->addCSS('jQuery-Mobile-Icon-Pack/dist/jqm-icon-pack-fa.css');
+                GDT_Icon::$iconProvider = ["GDO\JQueryMobile\GDT_IconJQM", 'iconS'];
             }
         }
-        if ($this->cfgUseIcons())
+        elseif ($this->cfgUseIcons() === 'jqm_icons_always')
         {
+            $this->addBowerCSS("jquery-mobile/dist/jquery.mobile.icons{$min}.css");
             $this->addCSS('jQuery-Mobile-Icon-Pack/dist/jqm-icon-pack-fa.css');
-        }
-    }
-    
-    public function onInit()
-    {
-        if ($this->cfgUseIcons())
-        {
-            # Set icon provider.
-            $method = ["GDO\JQueryMobile\GDT_IconJQM", 'iconS'];
-            GDT_Icon::$iconProvider = $method;
+            GDT_Icon::$iconProvider = ["GDO\JQueryMobile\GDT_IconJQM", 'iconS'];
         }
     }
     

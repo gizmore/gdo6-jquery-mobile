@@ -3,7 +3,6 @@ use GDO\Core\Website;
 use GDO\UI\GDT_Page;
 use GDO\Util\Javascript;
 use GDO\Core\Module_Core;
-use GDO\UI\GDT_Icon;
 use GDO\UI\GDT_IconButton;
 /** @var $page GDT_Page **/
 ?>
@@ -19,14 +18,16 @@ use GDO\UI\GDT_IconButton;
   <title><?=html($page->title)?></title>
 </head>
 <body>
-  
+ 
+ <script>document.body.style.display = 'none';</script>
+ 
  <div id="gdo-jqm-page" data-role="page" class="jqm-page">
 
-  <div id="gdo-left-panel" data-role="panel" data-position="left" data-display="overlay">
+  <div id="gdo-left-panel" data-role="panel" data-position="left" data-display="overlay" class="gdo-sidebar">
     <?=$page->leftNav->addClass('noflx')->renderCell()?>
   </div>
   
-  <div id="gdo-right-panel" data-role="panel" data-position="right" data-display="overlay">
+  <div id="gdo-right-panel" data-role="panel" data-position="right" data-display="overlay" class="gdo-sidebar">
     <?=$page->rightNav->addClass('noflx')->renderCell()?>
   </div>
 
@@ -49,6 +50,8 @@ use GDO\UI\GDT_IconButton;
  </div>
 
  <?=Javascript::displayJavascripts(Module_Core::instance()->cfgMinifyJS()!=='no')?>
+
+ <script>document.body.style.display = 'block';</script>
 
 </body>
 </html>

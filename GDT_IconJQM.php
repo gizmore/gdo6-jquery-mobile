@@ -32,7 +32,8 @@ final class GDT_IconJQM
         'language' => 'ui-icon-flag',
         'level' => 'ui-icon-external-link3',
         'lock' => 'ui-icon-lock',
-        'message' => 'ui-icon-pencil',
+        'message' => 'ui-icon-comment',
+        'money' => 'ui-icon-usd',
         'settings' => 'ui-icon-gear',
         'table' => 'ui-icon-table',
         'thumbs_down' => 'ui-icon-thumbs-thumb',
@@ -41,6 +42,7 @@ final class GDT_IconJQM
         'time' => 'ui-icon-clock',
         'title' => 'ui-icon-text-width',
         'upload' => 'ui-icon-upload',
+        'url' => 'ui-icon-link',
         'view' => 'ui-icon-eye',
     ];
     
@@ -50,11 +52,10 @@ final class GDT_IconJQM
         {
             return GDT_IconUTF8::iconS($icon, $iconText, $style);
         }
-        
-//         $htmlStyle = $style ? ' style="'.$style.'"' : '';
-//         $noText = $iconText ? '' : ' data-show-label="false"';
-        $class = "gdo-icon ui-corner-all ui-btn-inline ui-btn";
-        return sprintf('<button data-show-label="false" data-icon="%s" class="%s"></button>', self::$MAP[$icon], $class);
+        $style = $style ? ' style="'.$style.'"' : '';
+        $title = $iconText ? ' title="'.html($iconText).'"' : '';
+        $class = "gdo-icon ui-corner-all ui-icon";
+        return sprintf('<span class="%s %s"%s%s></span>', self::$MAP[$icon], $class, $title, $style);
     }
     
 }

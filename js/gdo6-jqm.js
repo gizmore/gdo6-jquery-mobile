@@ -6,52 +6,30 @@
  */
 $(function() {
 	
-	$.mobile.ajaxEnabled = false; 
-
-	$('input.gdo-autocomplete').each(function(){
-		var $this = $(this);
-		var config = JSON.parse($this.attr('data-config'));
-		var $ul = $('#autocomplete-'+config.name);
-		var $hidden = $('#autocomplete-id-'+config.name);
-		$hidden.val(config.selected.id);
-		if (config.selected.id > 0) {
-			$this.val(config.selected.text);
-		} else {
-			$this.attr('data-placeholder', 'true');
-		}
-		$ul.on('filterablebeforefilter', function(e, data) {
-			$ul.html('');
-			$ul.show();
-			$ul.html("<li><div class='ui-loader'><span class='ui-icon ui-icon-loading'></span></div></li>");
-            $ul.listview("refresh");
-            if ($this.val().length >= 2) {
-            	$.ajax({
-            		url: config.completionHref + '&query=' + $this.val(),
-            		dataType: "json",
-            		withCredentials: true
-            	})
-            	.then(function(response) {
-            		var html = '';
-            		$.each(response, function(i, val) {
-            			html += "<li data-id='"+val.id+"' data-text='"+val.text+"'><div>" + val.display + "</div></li>";
-            		});
-            		$ul.html(html);
-            		$ul.listview("refresh");
-            		$ul.trigger("updatelayout");
-            		$ul.removeClass('ui-screen-hidden');
-            		$ul.show();
-            	});
-            }
-            else {
-            	$ul.hide();
-            }
-		});
-		$ul.delegate('li', 'click', function () {
-			var $li = $(this);
-			$hidden.val($li.attr('data-id'));
-		    $this.val($li.attr('data-text'));
-		    $ul.hide();
-		 });
+	$.mobile.ajaxEnabled = false;
+	
+	$('.gdt-li-actions > a').each(function(){
+		$(this).text('aaa');
 	});
+	
+	$(function() {
+		if (window.GDO_FIRST_EDITABLE_FIELD) {
+			$('#'+window.GDO_FIRST_EDITABLE_FIELD).focus();
+		}
+	});
+	
+});
 
+/** Fix for local tabs **/
+$.widget( "ui.tabs", $.ui.tabs, {
+	_isLocal: function( anchor ) {
+		var path, baseUrl, absUrl;
+		path = $.mobile.path;
+		baseUrl = path.parseUrl( $.mobile.base.element().attr( "href" ) );
+		absUrl = path.parseUrl( path.makeUrlAbsolute( anchor.getAttribute( "href" ),
+				baseUrl ) );
+		return ( path.isSameDomain( absUrl.href, baseUrl.href ) &&
+				absUrl.pathname === baseUrl.pathname );
+		return this._superApply( arguments );
+	}
 });

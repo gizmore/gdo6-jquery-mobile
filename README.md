@@ -14,7 +14,7 @@ Build JQueryMobile with grunt.
      cd gdo6/
      ./gdo6_yarn.sh # install jquery components via yarn
      cd GDO/JQueryMobile/bower_components/jquery-mobile
-     npm install grunt
+     npm install
      grunt # build jquery-mobile from src
      
 ### Features

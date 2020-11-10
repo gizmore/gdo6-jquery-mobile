@@ -4,6 +4,7 @@ use GDO\Form\GDT_Submit;
 ?>
 <input
  type="submit"
+ data-role="submit"
  <?=$field->htmlFormName()?>
  value="<?=$field->displayLabel()?>"
  <?=$field->htmlAttributes()?>

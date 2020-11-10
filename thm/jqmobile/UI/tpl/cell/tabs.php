@@ -6,7 +6,7 @@
   <div data-role="navbar">
     <ul>
 <?php foreach ($field->getTabs() as $tab) : ?>
-      <li><a href="#<?=$tab->id()?>"><?=$tab->displayLabel()?></a></li>
+      <li><a href="#<?=$tab->id()?>" data-ajax="false"><?=$tab->displayLabel()?></a></li>
 <?php endforeach; ?>
     </ul>
   </div>

@@ -19,7 +19,7 @@ final class Module_JQueryMobile extends GDO_Module
 {
     public $module_priority = 25;
     
-    public function getThemes() { return ['jqmobile']; }
+    public function getTheme() { return 'jqmobile'; }
     
     public function getDependencies() { return ['JQuery']; }
 

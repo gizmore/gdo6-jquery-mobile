@@ -4,10 +4,12 @@ use GDO\UI\GDT_Page;
 use GDO\Util\Javascript;
 use GDO\Core\Module_Core;
 use GDO\UI\GDT_IconButton;
+use GDO\Language\GDO_Language;
 /** @var $page GDT_Page **/
+$page->loadSidebars();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?=GDO_Language::current()->getISO()?>">
 <head>
   <?=Website::displayHead()?>
   <?=Website::displayMeta()?>

@@ -4,14 +4,16 @@ $firstEditableField = null;
 <!-- Begin Form -->
 <div class="gdo-form <?=$form->htmlClassSlim()?>">
   <div class="gdo-form-inner">
+<?php if ($form->hasTitle() || $form->info) : ?>
     <div class="ui-body ui-body-a ui-corner-all">
-<?php if ($form->title) : ?>
-      <h3><?=$form->title?></h3>
+<?php if ($form->hasTitle()) : ?>
+      <h3><?=$form->renderTitle()?></h3>
 <?php endif; ?>
 <?php if ($form->info): ?>
       <p><?=$form->info?></p>
 <?php endif; ?>
     </div>
+<?php endif; ?>
     <form
      data-ajax="false"
      id="gdo_<?=$form->name;?>"

@@ -1,11 +1,15 @@
 <?php
 /** @var \GDO\UI\GDT_Panel $field **/ ?>
 <div class="gdo-panel ui-body ui-body-a ui-corner-all">
-<?php if ($field->title) : ?>
-<h3><?=$field->title?></h3>
+<?php if ($field->hasTitle()) : ?>
+  <h3><?=$field->renderTitle()?></h3>
 <?php endif; ?>
-<p><?=$field->html?>
-<?php foreach ($field->getFields() as $gdt) : ?>
-<?php echo $gdt->renderCell(); ?>
-<?php endforeach; ?></p>
+<?php if ($field->hasText()) : ?>
+  <p><?=$field->renderText()?></p>
+<?php endif; ?>
+<?php if ($field->fields) : ?>
+<?php foreach ($field->fields as $gdt) : ?>
+<?=$gdt->renderCell()?>
+<?php endforeach; ?>
+<?php endif; ?>
 </div>

@@ -1,6 +1,6 @@
 <?php
 /** @var $field \GDO\UI\GDT_Card **/
-$field->addClass('gdt-card ui-box ui-box-a ui-corner-all');
+$field->addClass('gdt-card ui-body ui-body-a ui-corner-all');
 ?>
 <div <?=$field->htmlAttributes()?>>
 
@@ -11,7 +11,7 @@ $field->addClass('gdt-card ui-box ui-box-a ui-corner-all');
 <?php if ($field->avatar || $field->title || $field->subtitle) : ?>
   <h3 class="gdt-card-upper">
 <?php if ($field->avatar) : ?>
-    <span class="gdt-card-avatar"><?=$field->avatar->renderCell()?></span>
+    <span class="gdt-card-avatar"><?=$field->avatar->imageSize(48)->renderCell()?></span>
 <?php endif; ?>
 <?php if ($field->title || $field->subtitle) : ?>
     <span class="gdt-card-title-texts">

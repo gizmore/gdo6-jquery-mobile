@@ -2,7 +2,7 @@
 <div class="ui-field-contain gdo-container<?=$field->classError()?>">
   <label <?=$field->htmlForID()?>><?=$field->htmlIcon()?><?=$field->displayLabel()?></label>
   <input
-   type="text"
+   type="<?=$field->_inputType?>"
    data-clear-btn="true"
    <?=$field->htmlID()?>
    <?=$field->htmlRequired()?>

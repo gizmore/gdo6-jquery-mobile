@@ -22,6 +22,8 @@ final class Module_JQueryMobile extends GDO_Module
     public function getTheme() { return 'jqmobile'; }
     
     public function getDependencies() { return ['JQuery']; }
+    
+    public function thirdPartyFolders() { return ['/jQuery-']; }
 
     /**
      * Block JQueryAutocomplete if we use ours.

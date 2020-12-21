@@ -9,6 +9,6 @@ use GDO\UI\GDT_Icon;
   <p><?=$field->renderText()?></p>
   <?php endif; ?>
 <?php else : ?>
-  <div class="fl"><?=GDT_Icon::iconS('error')?></div><?=$field->renderText()?><div class="cb"></div>
+  <div class="fl"><?=GDT_Icon::iconS('error')?><?=$field->renderText()?></div><div class="cb"></div>
 <?php endif; ?>
 </div>

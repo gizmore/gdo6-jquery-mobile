@@ -26,6 +26,7 @@ div.easy-autocomplete > input { padding-left: 1.75em; border: none; }
 .ui-controlgroup .ui-button-icon-only { padding: 0; }
 .gdo-icon { display: inline-block; border: 2px solid #ddd; border-radius: 8em; margin: 0; margin-right: 6px; padding: 2px; box-sizing: content-box; }
 .ui-icon-space { width: 6px; height: 6px; }
+.gdo-fa-icon { min-width: 20px; text-align: center; }
 
 /** Panel **/
 .gdo-panel { margin-bottom: 8px; }
@@ -60,6 +61,8 @@ pre.gdo-exception { white-space: pre-wrap; }
 
 /** Sidebar **/
 .gdo-sidebar h3.gdt-divider { font-size: 16px; }
+#gdo-left-panel a { text-align: left; }
+#gdo-right-panel a { text-align: right; }
 
 /** List **/
 .gdt-list ul.ui-listview { margin: 0 -1em; }
@@ -82,7 +85,7 @@ ul[role=listbox] a.ui-button.ui-checkbox-on { background-repeat: no-repeat; back
 ul[role=listbox] a.ui-button { padding-left: 32px; }
 
 /** Card **/
-.gdt-card-upper { display: flex; }
+.gdt-card-upper { display: flex; padding-bottom: 8px; }
 .gdt-card-avatar { flex: 0 0 auto; margin-right: 8px; align-self: center; }
 .gdt-card-title-texts { display: flex; flex-direction: column; flex: 1 1 auto; font-size: 16px; font-weight: normal; }
 .gdt-card-title { flex: 1 1 auto; display: flex; font-weight: bold; }
@@ -94,6 +97,9 @@ ul[role=listbox] a.ui-button { padding-left: 32px; }
 .gdt-card-fields > *:nth-child(2n-1) { text-align: right; margin-right: 8px; }
 .gdt-card-lower { border-top: 1px solid #666; }
 .gdt-card-divider { background: #eee; margin-top: 16px; }
+.gdt-card .gdt-message { text-align: left; grid-column-start: 1; grid-column-end: 3; }
+.gdt-card-title-texts label { margin: 0; }
+.gdt-card-title-texts .gdt-container > * { margin-right: 8px; }
 
 /** Pagemenu **/
 .gdo-pagemenu { display: block; height: 32px; line-height: 32px; margin: 8px 0; }
@@ -102,3 +108,6 @@ ul[role=listbox] a.ui-button { padding-left: 32px; }
 .gdo-pagemenu a {  padding: 0px 8px; }
 .gdo-pagemenu li:hover { background: #eee; }
 .gdo-pagemenu .page-selected { background: #fff; }
+
+/** Bars **/
+.gdo-container { width: 100%; }

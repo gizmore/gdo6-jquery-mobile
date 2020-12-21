@@ -14,7 +14,7 @@ $result = $field->getResult();
   <?php if ($field->hasTitle()) : ?>
   <h3><?=$field->renderTitle()?></h3>
   <?php endif; ?>
-  <table id="gwfdt-<?=$field->name?>" class="gdo-table" data-role="table" data-mode="">
+  <table id="gwfdt-<?=$field->name?>" class="gdo-table ui-responsive" data-role="table">
 	<thead>
 	  <tr>
 	  <?php foreach($headers as $gdoType) : ?>

@@ -3,7 +3,6 @@ $sel = ' selected="selected"';
 $var = $field->filterVar($f);
 ?>
 <div class="ui-field-contain gdo-container<?=$field->classError()?>">
-  <label <?=$field->htmlForID()?>><?=$field->htmlIcon()?><?=$field->displayLabel()?></label>
   <select
    name="<?=$f?>[f][<?=$field->name?>][]"
    data-native-menu="false"

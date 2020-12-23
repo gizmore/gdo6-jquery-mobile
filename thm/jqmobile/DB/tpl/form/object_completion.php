@@ -7,7 +7,7 @@ $object = $field->getValue();
   <input
    type="search"
    class="gdo-autocomplete-input"
-   autocomplete="off"
+   <?=$field->htmlAutocompleteOff()?>
    data-config='<?=$field->displayConfigJSON()?>'
    data-type="search"
    <?=$field->htmlID()?>

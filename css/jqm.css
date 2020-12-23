@@ -52,6 +52,7 @@ pre.gdo-exception { white-space: pre-wrap; }
 .gdo-table a.gdt-button { margin: 0; padding: 0; }
 .gdo-table th { vertical-align: bottom; }
 .gdo-table a.sel span { background-color: gold; }
+.gdo-table { overflow-x: auto; }
 
 /** Header **/
 .ui-toolbar-header a { align-self: center; text-overflow: inherit; }

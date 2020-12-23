@@ -2,7 +2,6 @@
 $sel = ' selected="selected"';
 $var = $field->filterVar($f);
 ?>
-<div class="ui-field-contain gdo-container<?=$field->classError()?>">
   <select
    name="<?=$f?>[f][<?=$field->name?>][]"
    data-native-menu="false"
@@ -17,5 +16,3 @@ $var = $field->filterVar($f);
 	  <option value="<?=html($enumValue)?>"<?=in_array($enumValue, $var) ? $sel : ''; ?>><?=$field->enumLabel($enumValue)?></option>
 	<?php endforeach; ?>
   </select>
-  <?=$field->htmlError()?>
-</div>

@@ -71,6 +71,9 @@ pre.gdo-exception { white-space: pre-wrap; }
 .gdt-list div.list-title { margin-bottom: 8px; }
 ul.ui-listview li.gdt-list-item { display: flex; flex-direction: row; }
 .gdt-list-item > span { display: flex; flex: 1 1 auto; flex-direction: column; }
+/* .gdt-list-item * { overflow-wrap: anywhere; word-break: break-all; } */
+.gdt-list-item a { word-break: break-all; white-space: normal; }
+.ui-listview > li.gdt-list-item p { white-space: break-spaces; word-break: break-word; }
 .gdt-list-item span.gdt-li-actions { flex: 0 0 auto; align-self: center; }
 ul.ui-listview .gdt-list-item > h3 { display: flex; }
 ul.ui-listview .gdt-list-item .gdt-li-avatar { margin-right: 8px; align-self: center; }

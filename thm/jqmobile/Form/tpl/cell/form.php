@@ -27,6 +27,7 @@ $firstEditableField = null;
           <?php if ($field->editable) $firstEditableField = $firstEditableField ? $firstEditableField : $field; ?>
           <?=$field->renderForm()?>
 <?php endforeach; ?>
+      <?=$form->actions()->renderCell()?>
     </form>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <?php /** @var $link \GDO\UI\GDT_Link **/ ?>
 <a
  <?=$link->htmlDisabled()?>
- <?=$link->htmlName()?>
+ <?=$link->htmlID()?>
  <?=$link->htmlAttributes()?>
  <?=$link->htmlTarget()?>
  <?=$link->htmlHREF()?>

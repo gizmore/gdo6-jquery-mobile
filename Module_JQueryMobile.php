@@ -2,6 +2,7 @@
 namespace GDO\JQueryMobile;
 
 use GDO\Core\GDO_Module;
+use GDO\Core\GDT_Array;
 use GDO\Core\Module_Core;
 use GDO\DB\GDT_Checkbox;
 use GDO\UI\GDT_Icon;
@@ -78,6 +79,11 @@ final class Module_JQueryMobile extends GDO_Module
             $this->addCSS('jQuery-Mobile-Icon-Pack/dist/jqm-icon-pack-fa.css');
             GDT_Icon::$iconProvider = ["GDO\JQueryMobile\GDT_IconJQM", 'iconS'];
         }
+    }
+    
+    public function hookIgnoreDocsFiles(GDT_Array $ignore)
+    {
+        $ignore->data[] = 'GDO/JQueryMobile/jQuery-Mobile-Icon-Pack/**/*';
     }
     
 }

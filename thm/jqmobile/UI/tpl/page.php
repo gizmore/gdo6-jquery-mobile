@@ -2,9 +2,9 @@
 use GDO\Core\Website;
 use GDO\UI\GDT_Page;
 use GDO\Util\Javascript;
-use GDO\Core\Module_Core;
 use GDO\UI\GDT_IconButton;
 use GDO\Language\GDO_Language;
+use GDO\Javascript\Module_Javascript;
 /** @var $page GDT_Page **/
 $page->loadSidebars();
 ?>
@@ -51,7 +51,7 @@ $page->loadSidebars();
 
  </div>
 
- <?=Javascript::displayJavascripts(Module_Core::instance()->cfgMinifyJS()!=='no')?>
+ <?=Javascript::displayJavascripts(Module_Javascript::instance()->cfgMinifyJS()==='concat')?>
 
  <script>document.body.style.display = 'block';</script>
 

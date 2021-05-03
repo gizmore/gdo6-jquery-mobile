@@ -8,6 +8,7 @@ use GDO\DB\GDT_Checkbox;
 use GDO\UI\GDT_Icon;
 use GDO\Core\Application;
 use GDO\DB\GDT_Enum;
+use GDO\Javascript\Module_Javascript;
 
 /**
  * JQueryMobile bindings and theme.
@@ -55,7 +56,8 @@ final class Module_JQueryMobile extends GDO_Module
     
     public function onIncludeScripts()
     {
-        $min = Module_Core::instance()->cfgMinifyJS() === 'no' ? '' : '.min';
+        $min = Module_Javascript::instance()->jsMinAppend();
+        
         if ($this->cfgUseTheme() && Application::instance()->hasTheme('jqmobile'))
         {
             $this->jqmIncluded = true;

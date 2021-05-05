@@ -1,5 +1,5 @@
 <?php /** @var $field \GDO\UI\GDT_Message **/ ?>
-<div class="ui-field-contain gdo-container<?=$field->classError()?>">
+<div class="ui-field-contain gdt-container<?=$field->classError()?>">
   <label <?=$field->htmlForID()?>><?=$field->htmlIcon()?><?=$field->displayLabel()?></label>
 <?php if ($field->classEditor() === 'wysiwyg') : ?>
   <div style="height: 48px;"></div>

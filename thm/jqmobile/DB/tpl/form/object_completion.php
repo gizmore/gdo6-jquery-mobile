@@ -2,7 +2,7 @@
 /** @var $field \GDO\DB\GDT_Object **/
 $object = $field->getValue();
 ?>
-<div class="ui-field-contain gdo-container<?=$field->classError()?> gdo-autocomplete">
+<div class="ui-field-contain gdt-container<?=$field->classError()?> gdo-autocomplete">
   <label <?=$field->htmlForID()?>><?=$field->htmlIcon()?><?=$field->displayLabel()?></label>
   <input
    type="search"

@@ -2,7 +2,7 @@
 $sel = ' selected="selected"';
 $var = $field->getVar();
 ?>
-<div class="ui-field-contain gdo-container<?=$field->classError()?>">
+<div class="ui-field-contain gdt-container<?=$field->classError()?>">
   <label <?=$field->htmlForID()?>><?=$field->htmlIcon()?><?=$field->displayLabel()?></label>
   <select
    data-native-menu="false"

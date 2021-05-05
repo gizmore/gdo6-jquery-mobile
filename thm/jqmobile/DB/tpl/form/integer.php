@@ -1,7 +1,7 @@
 <?php
 /** @var $field \GDO\DB\GDT_UInt **/
 ?>
-<div class="ui-field-contain gdo-container<?=$field->classError()?>">
+<div class="ui-field-contain gdt-container<?=$field->classError()?>">
   <label <?=$field->htmlForID()?>><?=$field->htmlIcon()?><?=$field->displayLabel()?></label>
   <input
    <?=$field->htmlID()?>

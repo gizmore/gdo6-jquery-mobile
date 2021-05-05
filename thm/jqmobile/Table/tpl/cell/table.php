@@ -10,11 +10,11 @@ $result = $field->getResult();
 ?>
 <form method="get" action="<?=$field->href?>" class="b">
 <?=GDT_Form::hiddenMoMe()?>
-<div class="gdo-table">
+<div class="gdt-table">
   <?php if ($field->hasTitle()) : ?>
   <h3><?=$field->renderTitle()?></h3>
   <?php endif; ?>
-  <table id="gwfdt-<?=$field->name?>" class="gdo-table">
+  <table id="gwfdt-<?=$field->name?>" class="gdt-table">
 	<thead>
 	  <tr>
 	  <?php foreach($headers as $gdoType) : ?>

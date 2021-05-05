@@ -1,5 +1,5 @@
 <?php /** @var $field \GDO\DB\GDT_String **/ ?>
-<div class="ui-field-contain gdo-container<?=$field->classError()?>">
+<div class="ui-field-contain gdt-container<?=$field->classError()?>">
   <label <?=$field->htmlForID()?>><?=$field->htmlIcon()?><?=$field->displayLabel()?></label>
   <input
    type="<?=$field->_inputType?>"

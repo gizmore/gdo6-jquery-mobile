@@ -8,8 +8,7 @@
    <?=$field->htmlRequired()?>
    <?=$field->htmlPattern()?>
    <?=$field->htmlDisabled()?>
-   min="<?=$field->min?>"
-   max="<?=$field->max?>"
+   maxlength="<?=$field->max?>"
    size="<?=min($field->max, 32) ?>"
    <?=$field->htmlFormName()?>
    value="<?=$field->displayVar()?>" />

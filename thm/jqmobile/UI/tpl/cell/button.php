@@ -13,8 +13,5 @@ if ($href) : ?>
  onclick="return false;"
 <?php endif; ?>
  href="<?=html($href)?>"
- data-role="button">
-  <?=$field->htmlIcon()?>
-  <?=$field->displayLabel()?>
-</a>
+ data-role="button"><?=$field->htmlIcon()?><?=$field->displayLabel()?></a>
 <?php endif; ?>

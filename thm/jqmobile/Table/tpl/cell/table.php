@@ -35,6 +35,19 @@ $result = $field->getResult();
 	  </tr>
 	</thead>
 	<tbody>
+	<?php if ($field->fetchInto) : ?>
+	<?php $dummy = $field->gdtTable->cache->getDummy(); ?>
+	<?php while ($gdo = $result->fetchInto($dummy)) : ?>
+	<tr data-gdo-id="<?= $gdo->getID()?>">
+	  <?php foreach($headers as $gdoType) : ?>
+	  <?php if (!$gdoType->hidden) : ?> 
+	  <?php $gdoType->gdo($gdo); ?>
+		<td class="<?=$gdoType->htmlClass()?>"><?=$gdoType->renderCell()?></td>
+	  <?php endif; ?>
+	  <?php endforeach; ?>
+	</tr>
+	<?php endwhile; ?>
+	<?php else : ?>
 	<?php while ($gdo = $result->fetchAs($field->fetchAs)) : ?>
 	<tr data-gdo-id="<?= $gdo->getID()?>">
 	  <?php foreach($headers as $gdoType) : ?>
@@ -45,6 +58,7 @@ $result = $field->getResult();
 	  <?php endforeach; ?>
 	</tr>
 	<?php endwhile; ?>
+	<?php endif; ?>
 	</tbody>
 <?php if ($field->footer) : ?>
 	<tfoot><?=$field->footer?></tfoot>

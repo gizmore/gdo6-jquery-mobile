@@ -5,6 +5,7 @@ use GDO\Util\Javascript;
 use GDO\UI\GDT_IconButton;
 use GDO\Language\GDO_Language;
 use GDO\Javascript\Module_Javascript;
+use GDO\UI\GDT_Loading;
 /** @var $page GDT_Page **/
 $page->loadSidebars();
 ?>
@@ -50,6 +51,8 @@ $page->loadSidebars();
   </div>
 
  </div>
+
+ <?=GDT_Loading::make()->render()?>
 
  <?=Javascript::displayJavascripts(Module_Javascript::instance()->cfgMinifyJS()==='concat')?>
 

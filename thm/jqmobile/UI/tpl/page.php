@@ -7,7 +7,6 @@ use GDO\Language\GDO_Language;
 use GDO\Javascript\Module_Javascript;
 use GDO\UI\GDT_Loading;
 /** @var $page GDT_Page **/
-$page->loadSidebars();
 ?>
 <!DOCTYPE html>
 <html lang="<?=GDO_Language::current()->getISO()?>">

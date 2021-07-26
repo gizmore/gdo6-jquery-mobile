@@ -16,7 +16,6 @@ use GDO\UI\GDT_Loading;
   <?=Website::displayLink()?>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="index, follow" />
   <title><?=$page->renderTitle()?></title>
 </head>
 <body>

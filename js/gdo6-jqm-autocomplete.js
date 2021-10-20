@@ -24,7 +24,7 @@ $(function() {
             	})
             	.then(function(response) {
             		var html = '';
-            		$.each(response.json, function(i, val) {
+            		$.each(response.json.data, function(i, val) {
             			html += "<li data-id='"+val.id+"' data-text='"+val.text+"'><div>" + val.display + "</div></li>";
             		});
             		$ul.html(html);

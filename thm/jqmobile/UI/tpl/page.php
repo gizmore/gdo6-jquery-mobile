@@ -1,7 +1,7 @@
 <?php
 use GDO\Core\Website;
 use GDO\UI\GDT_Page;
-use GDO\Util\Javascript;
+use GDO\Javascript\Javascript;
 use GDO\UI\GDT_IconButton;
 use GDO\Language\GDO_Language;
 use GDO\Javascript\Module_Javascript;

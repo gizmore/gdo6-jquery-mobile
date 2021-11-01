@@ -61,13 +61,13 @@ final class Module_JQueryMobile extends GDO_Module
         if ($this->cfgUseTheme() && Application::instance()->hasTheme('jqmobile'))
         {
             $this->jqmIncluded = true;
-            $this->addBowerJavascript("jquery-mobile/dist/jquery.mobile{$min}.js");
+            $this->addBowerJS("jquery-mobile/dist/jquery.mobile{$min}.js");
             $this->addBowerCSS("jquery-mobile/dist/jquery.mobile{$min}.css");
-            $this->addJavascript('js/gdo6-jqm.js');
+            $this->addJS('js/gdo6-jqm.js');
             $this->addCSS('css/jqm.css');
             if ($this->cfgUseAutocomplete())
             {
-                $this->addJavascript('js/gdo6-jqm-autocomplete.js');
+                $this->addJS('js/gdo6-jqm-autocomplete.js');
             }
             if ($this->cfgUseIcons() === 'jqm_icons_on_theme')
             {

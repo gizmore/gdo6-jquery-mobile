@@ -5,8 +5,8 @@
 <div <?=$field->htmlID()?> class="gdo-tab">
   <p>
 <?php
-foreach ($field->getFields() as $gdoType) :
-	echo $cell ? $gdoType->renderCell() : $gdoType->renderForm();
+foreach ($field->getFields() as $gdt) :
+	echo $cell ? $gdt->renderCell() : $gdt->renderForm();
 endforeach;?>
   </p>
 </div>

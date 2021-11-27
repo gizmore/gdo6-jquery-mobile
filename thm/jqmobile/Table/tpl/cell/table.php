@@ -17,17 +17,17 @@ $result = $field->getResult();
   <table id="gwfdt-<?=$field->name?>" class="gdt-table">
 	<thead>
 	  <tr>
-	  <?php foreach($headers as $gdoType) : ?>
-	  <?php if (!$gdoType->hidden) : ?>
-		<th class="<?=$gdoType->htmlClass()?>">
+	  <?php foreach($headers as $gdt) : ?>
+	  <?php if (!$gdt->hidden) : ?>
+		<th class="<?=$gdt->htmlClass()?>">
 		  <label>
-			<?= $gdoType->renderHeader(); ?>
+			<?= $gdt->renderHeader(); ?>
 			<?php if ($field->ordered) : ?>
-			<?= $gdoType->displayTableOrder($field); ?>
+			<?= $gdt->displayTableOrder($field); ?>
 			<?php endif; ?>
 		  </label>
 		  <?php if ($field->filtered) : ?>
-			<?= $gdoType->renderFilter($field->headers->name); ?>
+			<?= $gdt->renderFilter($field->headers->name); ?>
 		  <?php endif; ?>
 		</th>
 		<?php endif; ?>
@@ -39,10 +39,10 @@ $result = $field->getResult();
 	<?php $dummy = $field->gdtTable->cache->getDummy(); ?>
 	<?php while ($gdo = $result->fetchInto($dummy)) : ?>
 	<tr data-gdo-id="<?= $gdo->getID()?>">
-	  <?php foreach($headers as $gdoType) : ?>
-	  <?php if (!$gdoType->hidden) : ?> 
-	  <?php $gdoType->gdo($gdo); ?>
-		<td class="<?=$gdoType->htmlClass()?>"><?=$gdoType->renderCell()?></td>
+	  <?php foreach($headers as $gdt) : ?>
+	  <?php if (!$gdt->hidden) : ?> 
+	  <?php $gdt->gdo($gdo); ?>
+		<td class="<?=$gdt->htmlClass()?>"><?=$gdt->renderCell()?></td>
 	  <?php endif; ?>
 	  <?php endforeach; ?>
 	</tr>
@@ -50,10 +50,10 @@ $result = $field->getResult();
 	<?php else : ?>
 	<?php while ($gdo = $result->fetchAs($field->fetchAs)) : ?>
 	<tr data-gdo-id="<?= $gdo->getID()?>">
-	  <?php foreach($headers as $gdoType) : ?>
-	  <?php if (!$gdoType->hidden) : ?> 
-	  <?php $gdoType->gdo($gdo); ?>
-		<td class="<?=$gdoType->htmlClass()?>"><?=$gdoType->renderCell()?></td>
+	  <?php foreach($headers as $gdt) : ?>
+	  <?php if (!$gdt->hidden) : ?> 
+	  <?php $gdt->gdo($gdo); ?>
+		<td class="<?=$gdt->htmlClass()?>"><?=$gdt->renderCell()?></td>
 	  <?php endif; ?>
 	  <?php endforeach; ?>
 	</tr>

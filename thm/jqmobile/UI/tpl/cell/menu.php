@@ -7,8 +7,8 @@
 <?php else : ?>
 <li data-role="divider">aaa<?=t('menu')?></li>
 <?php endif; ?>
-<?php foreach ($field->getFields() as $gdoType) : ?>
-<li><?=$gdoType->renderCell()?></li>
+<?php foreach ($field->getFields() as $gdt) : ?>
+<li><?=$gdt->renderCell()?></li>
 <?php endforeach; ?>
 </ul>
 </div>

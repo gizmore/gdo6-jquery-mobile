@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Allow 405 response codes.
+ * Allow 409 response codes.
  * Autocompletion by gizmore@wechall.net and stack overflow.
  * @returns
  */

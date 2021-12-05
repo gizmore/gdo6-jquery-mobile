@@ -10,7 +10,7 @@ use GDO\Mail\GDT_Email;
    data-clear-btn="true"
    <?=$field->htmlID()?>
    <?=$field->htmlFormName()?>
-   value="<?=$field->displayVar()?>"
+   value="<?=$field->display()?>"
    <?=$field->htmlRequired()?>
    <?=$field->htmlDisabled()?> />
   <?=$field->htmlError()?>

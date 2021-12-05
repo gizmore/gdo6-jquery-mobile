@@ -10,6 +10,6 @@
    <?=$field->htmlFormName()?>
    rows="2"
    <?=$field->htmlRequired()?>
-   <?=$field->htmlDisabled()?>><?=$field->displayVar()?></textarea>
+   <?=$field->htmlDisabled()?>><?=$field->display()?></textarea>
   <?=$field->htmlError()?>
 </div>

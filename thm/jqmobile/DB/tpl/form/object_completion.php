@@ -21,7 +21,7 @@ $object = $field->getValue();
    type="hidden"
    <?=$field->htmlFormName()?>
    id="completion-<?=$field->name?>"
-   value="<?=$field->displayVar()?>" />
+   value="<?=$field->display()?>" />
   <div data-role="controlgroup" data-filter-reveal="true" data-filter="true" data-input="#<?=$field->id()?>">
     <ul id="autocomplete-<?=$field->name?>"
      class="gdo-autocomplete-listview"

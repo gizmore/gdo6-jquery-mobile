@@ -6,7 +6,7 @@
    <?=$field->htmlID()?>
    type="datetime"
    <?=$field->htmlFormName()?>
-   value="<?=$field->displayVar()?>"
+   value="<?=$field->display()?>"
    <?=$field->htmlDisabled()?> />
   <?=$field->htmlError()?>
 </div>

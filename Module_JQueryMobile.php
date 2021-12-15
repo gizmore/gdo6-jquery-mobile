@@ -56,7 +56,7 @@ final class Module_JQueryMobile extends GDO_Module
     
     public function onIncludeScripts()
     {
-        $min = Module_Javascript::instance()->jsMinAppend();
+        $min = Module_Javascript::instance()->cfgMinAppend();
         
         if ($this->cfgUseTheme() && Application::instance()->hasTheme('jqmobile'))
         {

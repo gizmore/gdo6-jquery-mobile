@@ -8,7 +8,7 @@ if ($pagemenu = $field->getPageMenu())
 }
 $result = $field->getResult();
 ?>
-<form method="get" action="<?=$field->href?>" class="b">
+<form method="get" action="<?=html($field->action)?>" class="b">
 <?=GDT_Form::hiddenMoMe()?>
 <div class="gdt-table">
   <?php if ($field->hasTitle()) : ?>
